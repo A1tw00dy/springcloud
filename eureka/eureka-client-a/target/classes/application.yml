@@ -1,0 +1,37 @@
+#server:
+#  port: 8080  # 客户端的端口没有要求
+#
+#spring:
+#  application:
+#    name: eureka-client-a
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka  # 指定注册的地址
+#    register-with-eureka: true # 往eureka-server注册
+#    fetch-registry: true  # 应用是否拉取服务器列表到本地
+#    registry-fetch-interval-seconds: 10  # 为了解决服务列表的脏读问题  时间越短脏读越少 性能消耗大
+#  instance:
+#    hostname: localhost # 应用的主机名称 最好写主机ip
+#    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port}
+#    prefer-ip-address: true # 显示ip
+#    lease-renewal-interval-in-seconds: 10 # 实例续约的时间
+
+server:
+  port: 8080  # 客户端的端口没有要求
+
+spring:
+  application:
+    name: eureka-client-a
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka,http://peer2:8762/eureka,http://peer3:8763/eureka  # 指定注册的地址
+    register-with-eureka: true # 往eureka-server注册
+    fetch-registry: true  # 应用是否拉取服务器列表到本地
+    registry-fetch-interval-seconds: 10  # 为了解决服务列表的脏读问题  时间越短脏读越少 性能消耗大
+  instance:
+    hostname: localhost # 应用的主机名称 最好写主机ip
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port}
+    prefer-ip-address: true # 显示ip
+    lease-renewal-interval-in-seconds: 10 # 实例续约的时间
