@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -11,10 +12,13 @@
         <module name="eureka-serve" />
         <module name="eureka" />
         <module name="eureka-client-a" />
-        <module name="provider-b" />
+        <module name="user-service" />
         <module name="eureka-server-b" />
-        <module name="consumer" />
         <module name="eureka-server-c" />
+        <module name="order-service" />
+        <module name="provider-b" />
+        <module name="feign" />
+        <module name="consumer" />
         <module name="provider-a" />
       </profile>
     </annotationProcessing>
@@ -30,9 +34,11 @@
       <module name="eureka-serve" options="-parameters" />
       <module name="eureka-server-b" options="-parameters" />
       <module name="eureka-server-c" options="-parameters" />
+      <module name="order-service" options="-parameters" />
       <module name="provider-a" options="-parameters" />
       <module name="provider-b" options="-parameters" />
       <module name="ribbon" options="" />
+      <module name="user-service" options="-parameters" />
     </option>
   </component>
 </project>
